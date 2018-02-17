@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56a32b3d-c631-4f16-b12f-ae19f85162f2" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ApiExtToolsServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeployVMCmd.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/command/user/vm/DeployVMCmd.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="536" column="25" lean-forward="false" selection-start-line="536" selection-start-column="21" selection-end-line="536" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2449#2829#0" expanded="false" />
+                <element signature="e#3058#3267#0" expanded="false" />
+                <element signature="e#3297#3301#0" expanded="false" />
+                <element signature="e#3591#3595#0" expanded="false" />
+                <element signature="e#3856#3989#0" expanded="false" />
+                <element signature="e#4019#4181#0" expanded="false" />
+                <element signature="e#4218#4393#0" expanded="false" />
+                <element signature="e#4430#4684#0" expanded="false" />
+                <element signature="e#4716#5003#0" expanded="false" />
+                <element signature="e#5043#5047#0" expanded="false" />
+                <element signature="e#5701#5881#0" expanded="false" />
+                <element signature="e#5909#6245#0" expanded="false" />
+                <element signature="e#6281#6423#0" expanded="false" />
+                <element signature="e#6454#6730#0" expanded="false" />
+                <element signature="e#6766#7234#0" expanded="false" />
+                <element signature="e#7268#7432#0" expanded="false" />
+                <element signature="e#7472#7696#0" expanded="false" />
+                <element signature="e#7726#7730#0" expanded="false" />
+                <element signature="e#8214#8218#0" expanded="false" />
+                <element signature="e#8711#9061#0" expanded="false" />
+                <element signature="e#9099#9243#0" expanded="false" />
+                <element signature="e#9278#9425#0" expanded="false" />
+                <element signature="e#9461#9705#0" expanded="false" />
+                <element signature="e#9739#9913#0" expanded="false" />
+                <element signature="e#9946#10117#0" expanded="false" />
+                <element signature="e#10151#10155#0" expanded="false" />
+                <element signature="e#10562#10566#0" expanded="false" />
+                <element signature="e#10981#11221#0" expanded="false" />
+                <element signature="e#11257#11418#0" expanded="false" />
+                <element signature="e#11448#11696#0" expanded="false" />
+                <element signature="method#DeployVMCmd#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getAccountName#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getDomainId#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getDetails#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getSecurityGroupIdList#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getNetworkIds#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getIpToNetworkMap#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getIp6Address#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getAffinityGroupIdList#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#getEntityOwnerId#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#verifyDetails#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#verifyMinAndMaxIops#0;class#DeployVMCmd#0" expanded="false" />
+                <element signature="method#create#0;class#DeployVMCmd#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetVmConfigResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetVmConfigResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseCmd.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseCmd.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="91" column="19" lean-forward="false" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiExtToolsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserVmService.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/vm/UserVmService.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserVmManagerImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-server/4.8.0.1/cloud-server-4.8.0.1.jar!/com/cloud/vm/UserVmManagerImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="2111" column="18" lean-forward="false" selection-start-line="2111" selection-start-column="18" selection-end-line="2111" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>olidFire</find>
+      <find>setTimeOfDay</find>
+      <find>TimeOfDay</find>
+      <find>timeOfDay</find>
+      <find>_apiSolidFireService</find>
+      <find>_clusterDao</find>
+      <find>clusterUuid</find>
+      <find>cluster</find>
+      <find>primaryStoreDriver</find>
+      <find>ApiSolidFire2Service</find>
+      <find>ApiSolidFireVolumeIscsiName2Response</find>
+      <find>Inject</find>
+      <find>_accountDetailsDao</find>
+      <find>_dataStoreProviderMgr</find>
+      <find>_clusterDetailsDao</find>
+      <find>_vMTemplateDao</find>
+      <find>_networkService</find>
+      <find>domainManager</find>
+      <find>List</find>
+      <find>()</find>
+      <find>s_logger</find>
+      <find>deploy</find>
+      <find>create</find>
+      <find>create(</find>
+      <find>startVirtualMachine</find>
+      <find>this</find>
+      <find>BaseAsyncCreateCustomIdCmd</find>
+    </findStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/ApiSolidFireServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/ApiSolidFireService.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/cloudstack/solidfire-intg-test/module.properties" />
+        <option value="$PROJECT_DIR$/resources/META-INF/cloudstack/solidfire-intg-test2/spring-solidfire-intg-test2-context.xml" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetSolidFireAccountId2Cmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetSolidFireVolumeAccessGroupId2Cmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetSolidFireVolumeIscsiName2Cmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetSolidFireVolumeSize2Cmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetTimeOfDayCmdResponse.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetTimeOfDayCmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/LogicLayer.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetVmConfigCmdResponse.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/user/solidfire/GetVmConfigCmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/ApiSolidFireService2Impl.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/ApiSolidFire2Service.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/cloudstack/solidfire-intg-test2/module.properties" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsImpl.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/cloudstack/ext-tools/spring-ext-tools-context.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetVmConfigResponse.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/response/DeployVmResponse.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetVmConfigCmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/api/command/DeployVmCmd.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsService.java" />
+        <option value="$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsServiceImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="296" />
+    <option name="y" value="128" />
+    <option name="width" value="1391" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="response" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ext-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="exttools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.cloudstack:cloud-engine-api:4.8.0.1" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.cloudstack:cloud-engine-api:4.8.0.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="cloud-engine-api-4.8.0.1.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.cloudstack:cloud-engine-api:4.8.0.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="cloud-engine-api-4.8.0.1.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.cloudstack:cloud-engine-api:4.8.0.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="cloud-engine-api-4.8.0.1.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloud-plugin-api-solidfire-intg-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.cloudstack:cloud-engine-api:4.8.0.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="cloud-engine-api-4.8.0.1.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudstack" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.apache.cloudstack.api.response" />
+      <recent name="org.apache.cloudstack.api.command" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="cloud-plugin-api-solidfire-intg-test" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56a32b3d-c631-4f16-b12f-ae19f85162f2" name="Default" comment="" />
+      <created>1518537514113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1518537514113</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26589274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2570481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetSolidFireVolumeIscsiName2Cmd.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/solidfire/LogicLayer.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/ApiSolidFireVolumeIscsiName2Response.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-api/4.8.0.1/cloud-engine-api-4.8.0.1.jar!/org/apache/cloudstack/engine/subsystem/api/network/NetworkServiceProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-api/4.8.0.1/cloud-engine-api-4.8.0.1.jar!/org/apache/cloudstack/engine/subsystem/api/network/NetworkSubsystem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/ApiSolidFireVolumeSize2Response.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/dc/ClusterDetailsDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetSolidFireAccountId2Cmd.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetSolidFireVolumeAccessGroupId2Cmd.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetSolidFireVolumeIscsiName2Cmd.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetSolidFireVolumeSize2Cmd.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/ApiSolidFireAccountId2Response.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/offering/OfferingManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/cloudstack/ext-tools/module.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/cloudstack/ext-tools/spring-ext-tools-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/service/ServiceOfferingVO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/offering/ServiceOffering.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/service/dao/ServiceOfferingDetailsDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/service/dao/ServiceOfferingDaoImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="117" column="35" lean-forward="false" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/service/dao/ServiceOfferingDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/network/dao/NetworkAccountDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseListProjectAndAccountResourcesCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseListTaggedResourcesCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="84" lean-forward="false" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-server/4.8.0.1/cloud-server-4.8.0.1.jar!/com/cloud/network/NetworkServiceImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="1329" column="15" lean-forward="false" selection-start-line="1329" selection-start-column="13" selection-end-line="1329" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/command/user/network/ListNetworksCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="193" column="87" lean-forward="false" selection-start-line="193" selection-start-column="87" selection-end-line="193" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/network/NetworkService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="102" column="13" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/network/dao/NetworkDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <marker date="1513647236000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1513647236000" expanded="true" signature="145:503" ph="..." />
+            <marker date="1513647236000" expanded="true" signature="1172:1190" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/user/AccountDetailsDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-server/4.8.0.1/cloud-server-4.8.0.1.jar!/com/cloud/user/AccountManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <marker date="1513647254000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1513647254000" expanded="true" signature="138:836" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetTimeOfDayCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetTimeOfDayResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-framework-jobs/4.8.0.1/cloud-framework-jobs-4.8.0.1.jar!/org/apache/cloudstack/framework/jobs/dao/VmWorkJobDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-api/4.8.0.1/cloud-engine-api-4.8.0.1.jar!/com/cloud/vm/VirtualMachineManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/vm/dao/UserVmDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/uservm/UserVm.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-server/4.8.0.1/cloud-server-4.8.0.1.jar!/com/cloud/vm/UserVmManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#3347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-engine-schema/4.8.0.1/cloud-engine-schema-4.8.0.1.jar!/com/cloud/vm/UserVmVO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#542#549#0" expanded="false" />
+            <element signature="e#717#801#0" expanded="false" />
+            <element signature="e#837#953#0" expanded="false" />
+            <element signature="e#1036#1131#0" expanded="false" />
+            <element signature="e#1168#1243#0" expanded="false" />
+            <element signature="method#UserVmVO#0;class#UserVmVO#0" expanded="false" />
+            <element signature="method#UserVmVO#1;class#UserVmVO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseAsyncCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseAsyncCreateCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseAsyncCreateCustomIdCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/GetVmConfigCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/BaseCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="91" column="19" lean-forward="false" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/com/cloud/vm/UserVmService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-server/4.8.0.1/cloud-server-4.8.0.1.jar!/com/cloud/vm/UserVmManagerImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="2111" column="18" lean-forward="false" selection-start-line="2111" selection-start-column="18" selection-end-line="2111" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/DeployVmResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/response/GetVmConfigResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/api/command/DeployVmCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2358">
+          <caret line="61" column="59" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cloudstack/cloud-api/4.8.0.1/cloud-api-4.8.0.1.jar!/org/apache/cloudstack/api/command/user/vm/DeployVMCmd.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="536" column="25" lean-forward="false" selection-start-line="536" selection-start-column="21" selection-end-line="536" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2449#2829#0" expanded="false" />
+            <element signature="e#3058#3267#0" expanded="false" />
+            <element signature="e#3297#3301#0" expanded="false" />
+            <element signature="e#3591#3595#0" expanded="false" />
+            <element signature="e#3856#3989#0" expanded="false" />
+            <element signature="e#4019#4181#0" expanded="false" />
+            <element signature="e#4218#4393#0" expanded="false" />
+            <element signature="e#4430#4684#0" expanded="false" />
+            <element signature="e#4716#5003#0" expanded="false" />
+            <element signature="e#5043#5047#0" expanded="false" />
+            <element signature="e#5701#5881#0" expanded="false" />
+            <element signature="e#5909#6245#0" expanded="false" />
+            <element signature="e#6281#6423#0" expanded="false" />
+            <element signature="e#6454#6730#0" expanded="false" />
+            <element signature="e#6766#7234#0" expanded="false" />
+            <element signature="e#7268#7432#0" expanded="false" />
+            <element signature="e#7472#7696#0" expanded="false" />
+            <element signature="e#7726#7730#0" expanded="false" />
+            <element signature="e#8214#8218#0" expanded="false" />
+            <element signature="e#8711#9061#0" expanded="false" />
+            <element signature="e#9099#9243#0" expanded="false" />
+            <element signature="e#9278#9425#0" expanded="false" />
+            <element signature="e#9461#9705#0" expanded="false" />
+            <element signature="e#9739#9913#0" expanded="false" />
+            <element signature="e#9946#10117#0" expanded="false" />
+            <element signature="e#10151#10155#0" expanded="false" />
+            <element signature="e#10562#10566#0" expanded="false" />
+            <element signature="e#10981#11221#0" expanded="false" />
+            <element signature="e#11257#11418#0" expanded="false" />
+            <element signature="e#11448#11696#0" expanded="false" />
+            <element signature="method#DeployVMCmd#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getAccountName#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getDomainId#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getDetails#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getSecurityGroupIdList#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getNetworkIds#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getIpToNetworkMap#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getIp6Address#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getAffinityGroupIdList#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#getEntityOwnerId#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#verifyDetails#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#verifyMinAndMaxIops#0;class#DeployVMCmd#0" expanded="false" />
+            <element signature="method#create#0;class#DeployVMCmd#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cloudstack/exttools/ApiExtToolsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>cloud-plugin-api-solidfire-intg-test2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
