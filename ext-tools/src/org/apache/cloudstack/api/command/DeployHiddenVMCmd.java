@@ -1,21 +1,40 @@
 package org.apache.cloudstack.api.command;
 
+import com.cloud.alert.AlertManager;
 import com.cloud.dc.DataCenter;
+import com.cloud.dc.DataCenter.NetworkType;
 import com.cloud.exception.ConcurrentOperationException;
 import com.cloud.exception.InsufficientCapacityException;
 import com.cloud.exception.InsufficientServerCapacityException;
+import com.cloud.exception.InvalidParameterValueException;
+import com.cloud.exception.ResourceAllocationException;
 import com.cloud.exception.ResourceUnavailableException;
+import com.cloud.hypervisor.Hypervisor.HypervisorType;
+import com.cloud.network.Network;
+import com.cloud.network.Network.IpAddresses;
+import com.cloud.offering.DiskOffering;
+import com.cloud.offering.ServiceOffering;
+import com.cloud.service.dao.ServiceOfferingDao;
+import com.cloud.storage.dao.VMTemplateDao;
+import com.cloud.storage.dao.VolumeDao;
+import com.cloud.template.VirtualMachineTemplate;
+import com.cloud.user.Account;
+import com.cloud.user.ResourceLimitService;
 import com.cloud.uservm.UserVm;
+import com.cloud.utils.net.NetUtils;
 import com.cloud.vm.VirtualMachine;
+import com.cloud.vm.VirtualMachineManager;
+import com.cloud.vm.dao.UserVmDao;
 import org.apache.cloudstack.acl.RoleType;
 import org.apache.cloudstack.affinity.AffinityGroupResponse;
 import org.apache.cloudstack.api.ACL;
 import org.apache.cloudstack.api.APICommand;
+import org.apache.cloudstack.api.ApiCommandJobType;
 import org.apache.cloudstack.api.ApiErrorCode;
+import org.apache.cloudstack.api.BaseAsyncCreateCustomIdCmd;
 import org.apache.cloudstack.api.Parameter;
 import org.apache.cloudstack.api.ResponseObject.ResponseView;
 import org.apache.cloudstack.api.ServerApiException;
-import org.apache.cloudstack.api.command.user.vm.DeployVMCmd;
 import org.apache.cloudstack.api.response.DiskOfferingResponse;
 import org.apache.cloudstack.api.response.DomainResponse;
 import org.apache.cloudstack.api.response.HostResponse;
@@ -27,13 +46,21 @@ import org.apache.cloudstack.api.response.TemplateResponse;
 import org.apache.cloudstack.api.response.UserVmResponse;
 import org.apache.cloudstack.api.response.ZoneResponse;
 import org.apache.cloudstack.context.CallContext;
+import org.apache.cloudstack.engine.orchestration.service.VolumeOrchestrationService;
 import org.apache.cloudstack.exttools.ApiExtToolsServiceImpl;
+import org.apache.cloudstack.exttools.UserVmServiceModified;
 import org.apache.cloudstack.framework.config.ConfigKey;
 import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 @APICommand(
         name = "deployHiddenVm",
@@ -44,13 +71,31 @@ import java.util.Map;
         requestHasSensitiveInfo = false,
         responseHasSensitiveInfo = true
 )
-public class DeployHiddenVMCmd extends DeployVMCmd {
+public class DeployHiddenVMCmd extends BaseAsyncCreateCustomIdCmd {
 
     @Inject
     private ApiExtToolsServiceImpl _apiExtToolsService;
-
+    @Inject
+    protected UserVmDao _vmDao = null;
+    @Inject
+    protected VMTemplateDao _templateDao = null;
+    @Inject
+    protected VirtualMachineManager _itMgr;
+    @Inject
+    protected VolumeDao _volsDao = null;
+    @Inject
+    VolumeOrchestrationService volumeMgr;
+    @Inject
+    protected AlertManager _alertMgr = null;
+    @Inject
+    protected ServiceOfferingDao _serviceOfferingDao;
+    @Inject
+    protected ResourceLimitService _resourceLimitMgr;
+    //@Inject
+    protected UserVmServiceModified _userVmServiceModified = new UserVmServiceModified();
     public static final Logger s_logger = Logger.getLogger(DeployHiddenVMCmd.class.getName());
     private static final String s_name = "deployvirtualmachineresponse";
+
     @Parameter(
             name = "zoneid",
             type = CommandType.UUID,
@@ -64,7 +109,7 @@ public class DeployHiddenVMCmd extends DeployVMCmd {
             name = "serviceofferingid",
             type = CommandType.UUID,
             entityType = {ServiceOfferingResponse.class},
-            required = true,
+            //required = true,
             description = "the ID of the service offering for the virtual machine"
     )
     private Long serviceOfferingId;
@@ -73,7 +118,7 @@ public class DeployHiddenVMCmd extends DeployVMCmd {
             name = "templateid",
             type = CommandType.UUID,
             entityType = {TemplateResponse.class},
-            required = true,
+            //required = true,
             description = "the ID of the template for the virtual machine"
     )
     private Long templateId;
@@ -263,15 +308,262 @@ public class DeployHiddenVMCmd extends DeployVMCmd {
     public DeployHiddenVMCmd() {
     }
 
-    @Override
+    private void SetGlobalSettingsValues() {
+        ConfigKey<?>[] configKeys = _apiExtToolsService.getConfigKeys();
+        String configKeyZoneUuid = (String)configKeys[0].value();
+
+        //TODO: replace zone to template
+        DataCenter zone = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid);
+        //s_logger.debug("!!! zoneId=" + this.zoneId + ", config zoneId=" + zone.getId() + ", config zoneUuid=" + configKeyZoneUuid);
+
+        if (this.zoneId == null) {
+            DataCenter dataCenter = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid); //zone
+            this.zoneId = dataCenter.getId();
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+
+    public String getAccountName() {
+        return this.accountName == null ? CallContext.current().getCallingAccount().getAccountName() : this.accountName;
+    }
+
+    public Long getDiskOfferingId() {
+        return this.diskOfferingId;
+    }
+
+    public String getDeploymentPlanner() {
+        return this.deploymentPlanner;
+    }
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    public Long getDomainId() {
+        return this.domainId == null ? CallContext.current().getCallingAccount().getDomainId() : this.domainId;
+    }
+
+    public Map<String, String> getDetails() {
+        Map<String, String> customparameterMap = new HashMap();
+        if (this.details != null && this.details.size() != 0) {
+            Collection parameterCollection = this.details.values();
+            Iterator iter = parameterCollection.iterator();
+
+            while(iter.hasNext()) {
+                HashMap<String, String> value = (HashMap)iter.next();
+                Iterator var5 = value.entrySet().iterator();
+
+                while(var5.hasNext()) {
+                    Entry<String, String> entry = (Entry)var5.next();
+                    customparameterMap.put(entry.getKey(), entry.getValue());
+                }
+            }
+        }
+
+        if (this.rootdisksize != null && !customparameterMap.containsKey("rootdisksize")) {
+            customparameterMap.put("rootdisksize", this.rootdisksize.toString());
+        }
+
+        return customparameterMap;
+    }
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    public HypervisorType getHypervisor() {
+        return HypervisorType.getType(this.hypervisor);
+    }
+
+    public Boolean getDisplayVm() {
+        return this.displayVm;
+    }
+
+    public boolean isDisplay() {
+        return this.displayVm == null ? true : this.displayVm;
+    }
+
+    public List<Long> getSecurityGroupIdList() {
+        if (this.securityGroupNameList != null && this.securityGroupIdList != null) {
+            throw new InvalidParameterValueException("securitygroupids parameter is mutually exclusive with securitygroupnames parameter");
+        } else if (this.securityGroupNameList != null) {
+            List<Long> securityGroupIds = new ArrayList();
+            Iterator var2 = this.securityGroupNameList.iterator();
+
+            while(var2.hasNext()) {
+                String groupName = (String)var2.next();
+                Long groupId = this._responseGenerator.getSecurityGroupId(groupName, this.getEntityOwnerId());
+                if (groupId == null) {
+                    throw new InvalidParameterValueException("Unable to find group by name " + groupName);
+                }
+
+                securityGroupIds.add(groupId);
+            }
+
+            return securityGroupIds;
+        } else {
+            return this.securityGroupIdList;
+        }
+    }
+
+    public Long getServiceOfferingId() {
+        return this.serviceOfferingId;
+    }
+
+    public Long getSize() {
+        return this.size;
+    }
+
+    public Long getTemplateId() {
+        return this.templateId;
+    }
+
+    public String getUserData() {
+        return this.userData;
+    }
+
+    public Long getZoneId() {
+        return this.zoneId;
+    }
+
+    public List<Long> getNetworkIds() {
+        if (this.ipToNetworkList != null && !this.ipToNetworkList.isEmpty()) {
+            if ((this.networkIds == null || this.networkIds.isEmpty()) && this.ipAddress == null && this.getIp6Address() == null) {
+                List<Long> networks = new ArrayList();
+                networks.addAll(this.getIpToNetworkMap().keySet());
+                return networks;
+            } else {
+                throw new InvalidParameterValueException("ipToNetworkMap can't be specified along with networkIds or ipAddress");
+            }
+        } else {
+            return this.networkIds;
+        }
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSSHKeyPairName() {
+        return this.sshKeyPairName;
+    }
+
+    public Long getHostId() {
+        return this.hostId;
+    }
+
+    public boolean getStartVm() {
+        return this.startVm == null ? true : this.startVm;
+    }
+
+    private Map<Long, IpAddresses> getIpToNetworkMap() {
+        if ((this.networkIds != null || this.ipAddress != null || this.getIp6Address() != null) && this.ipToNetworkList != null) {
+            throw new InvalidParameterValueException("NetworkIds and ipAddress can't be specified along with ipToNetworkMap parameter");
+        } else {
+            LinkedHashMap<Long, IpAddresses> ipToNetworkMap = null;
+            if (this.ipToNetworkList != null && !this.ipToNetworkList.isEmpty()) {
+                ipToNetworkMap = new LinkedHashMap();
+                Collection ipsCollection = this.ipToNetworkList.values();
+                Iterator iter = ipsCollection.iterator();
+
+                while(iter.hasNext()) {
+                    HashMap<String, String> ips = (HashMap)iter.next();
+                    Network network = this._networkService.getNetwork((String)ips.get("networkid"));
+                    Long networkId;
+                    if (network != null) {
+                        networkId = network.getId();
+                    } else {
+                        try {
+                            networkId = Long.parseLong((String)ips.get("networkid"));
+                        } catch (NumberFormatException var10) {
+                            throw new InvalidParameterValueException("Unable to translate and find entity with networkId: " + (String)ips.get("networkid"));
+                        }
+                    }
+
+                    String requestedIp = (String)ips.get("ip");
+                    String requestedIpv6 = (String)ips.get("ipv6");
+                    if (requestedIpv6 != null) {
+                        requestedIpv6 = NetUtils.standardizeIp6Address(requestedIpv6);
+                    }
+
+                    IpAddresses addrs = new IpAddresses(requestedIp, requestedIpv6);
+                    ipToNetworkMap.put(networkId, addrs);
+                }
+            }
+
+            return ipToNetworkMap;
+        }
+    }
+
+    public String getIp6Address() {
+        return this.ip6Address == null ? null : NetUtils.standardizeIp6Address(this.ip6Address);
+    }
+
+    public List<Long> getAffinityGroupIdList() {
+        if (this.affinityGroupNameList != null && this.affinityGroupIdList != null) {
+            throw new InvalidParameterValueException("affinitygroupids parameter is mutually exclusive with affinitygroupnames parameter");
+        } else if (this.affinityGroupNameList != null) {
+            List<Long> affinityGroupIds = new ArrayList();
+            Iterator var2 = this.affinityGroupNameList.iterator();
+
+            while(var2.hasNext()) {
+                String groupName = (String)var2.next();
+                Long groupId = this._responseGenerator.getAffinityGroupId(groupName, this.getEntityOwnerId());
+                if (groupId == null) {
+                    throw new InvalidParameterValueException("Unable to find affinity group by name " + groupName);
+                }
+
+                affinityGroupIds.add(groupId);
+            }
+
+            return affinityGroupIds;
+        } else {
+            return this.affinityGroupIdList;
+        }
+    }
+
+    public String getCommandName() {
+        return "deployvirtualmachineresponse";
+    }
+
+    public static String getResultObjectName() {
+        return "virtualmachine";
+    }
+
+    public long getEntityOwnerId() {
+        Long accountId = this._accountService.finalyzeAccountId(this.accountName, this.domainId, this.projectId, true);
+        return accountId == null ? CallContext.current().getCallingAccount().getId() : accountId;
+    }
+
+    public String getEventType() {
+        return "VM.CREATE";
+    }
+
+    public String getCreateEventType() {
+        return "VM.CREATE";
+    }
+
+    public String getCreateEventDescription() {
+        return "creating Vm";
+    }
+
+    public String getEventDescription() {
+        return "starting Vm. Vm Id: " + this.getEntityId();
+    }
+
+    public ApiCommandJobType getInstanceType() {
+        return ApiCommandJobType.VirtualMachine;
+    }
+
     public void execute() {
-        SetGlobalSettingsValues();
+        //SetGlobalSettingsValues();
 
         UserVm result;
         if (this.getStartVm()) {
             try {
                 CallContext.current().setEventDetails("Vm Id: " + this.getEntityId());
-                result = this._userVmService.startVirtualMachine(this);
+                result = this._userVmServiceModified.startVirtualMachine(this);
             } catch (ResourceUnavailableException var4) {
                 s_logger.warn("Exception: ", var4);
                 throw new ServerApiException(ApiErrorCode.RESOURCE_UNAVAILABLE_ERROR, var4.getMessage());
@@ -301,26 +593,130 @@ public class DeployHiddenVMCmd extends DeployVMCmd {
         }
     }
 
-    private void SetGlobalSettingsValues() {
-        ConfigKey<?>[] configKeys = _apiExtToolsService.getConfigKeys();
-        String configKeyZoneUuid = (String)configKeys[0].value();
+    private void verifyDetails() {
+        Map<String, String> map = this.getDetails();
+        if (map != null) {
+            String minIops = (String)map.get("minIops");
+            String maxIops = (String)map.get("maxIops");
+            this.verifyMinAndMaxIops(minIops, maxIops);
+            minIops = (String)map.get("minIopsDo");
+            maxIops = (String)map.get("maxIopsDo");
+            this.verifyMinAndMaxIops(minIops, maxIops);
+        }
 
-        //TODO: replace zone to template
-        DataCenter zone = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid);
-        s_logger.debug("!!! zoneId=" + this.zoneId + ", config zoneId=" + zone.getId() + ", config zoneUuid=" + configKeyZoneUuid);
-
-//        s_logger.debug("!!!!! zoneId = " + this.zoneId);
-//        if (this.zoneId == null) {
-//            DataCenter zone = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid);
-//            if (zone == null) {
-//                s_logger.debug("!!!!! Unable to find zone by UUID(config)=" + configKeyZoneUuid);
-//                throw new InvalidParameterValueException("Unable to find zone by UUID=" + configKeyZoneUuid);
-//            }
-//            this.zoneId = zone.getId();
-//            s_logger.debug("!!!!! config zoneId = " + zone.getId());
-//            s_logger.debug("!!!!! config zoneUuid = " + zone.getUuid());
-//        }
     }
 
+    private void verifyMinAndMaxIops(String minIops, String maxIops) {
+        if (minIops != null && maxIops == null || minIops == null && maxIops != null) {
+            throw new InvalidParameterValueException("Either 'Min IOPS' and 'Max IOPS' must both be specified or neither be specified.");
+        } else {
+            long lMinIops;
+            try {
+                if (minIops != null) {
+                    lMinIops = Long.parseLong(minIops);
+                } else {
+                    lMinIops = 0L;
+                }
+            } catch (NumberFormatException var9) {
+                throw new InvalidParameterValueException("'Min IOPS' must be a whole number.");
+            }
+
+            long lMaxIops;
+            try {
+                if (maxIops != null) {
+                    lMaxIops = Long.parseLong(maxIops);
+                } else {
+                    lMaxIops = 0L;
+                }
+            } catch (NumberFormatException var8) {
+                throw new InvalidParameterValueException("'Max IOPS' must be a whole number.");
+            }
+
+            if (lMinIops > lMaxIops) {
+                throw new InvalidParameterValueException("'Min IOPS' must be less than or equal to 'Max IOPS'.");
+            }
+        }
+    }
+
+    public void create() throws ResourceAllocationException {
+        SetGlobalSettingsValues();
+
+        try {
+            Account owner = this._accountService.getActiveAccountById(this.getEntityOwnerId());
+            this.verifyDetails();
+            DataCenter zone = (DataCenter)this._entityMgr.findById(DataCenter.class, this.zoneId);
+            if (zone == null) {
+                throw new InvalidParameterValueException("Unable to find zone by id=" + this.zoneId);
+            } else {
+                ServiceOffering serviceOffering = (ServiceOffering)this._entityMgr.findById(ServiceOffering.class, this.serviceOfferingId);
+                if (serviceOffering == null) {
+                    throw new InvalidParameterValueException("Unable to find service offering: " + this.serviceOfferingId);
+                } else {
+                    VirtualMachineTemplate template = (VirtualMachineTemplate)this._entityMgr.findById(VirtualMachineTemplate.class, this.templateId);
+                    if (template == null) {
+                        throw new InvalidParameterValueException("Unable to find the template " + this.templateId);
+                    } else {
+                        DiskOffering diskOffering = null;
+                        if (this.diskOfferingId != null) {
+                            diskOffering = (DiskOffering)this._entityMgr.findById(DiskOffering.class, this.diskOfferingId);
+                            if (diskOffering == null) {
+                                throw new InvalidParameterValueException("Unable to find disk offering " + this.diskOfferingId);
+                            }
+                        }
+
+                        if (!zone.isLocalStorageEnabled()) {
+                            if (serviceOffering.getUseLocalStorage()) {
+                                throw new InvalidParameterValueException("Zone is not configured to use local storage but service offering " + serviceOffering.getName() + " uses it");
+                            }
+
+                            if (diskOffering != null && diskOffering.getUseLocalStorage()) {
+                                throw new InvalidParameterValueException("Zone is not configured to use local storage but disk offering " + diskOffering.getName() + " uses it");
+                            }
+                        }
+
+                        UserVm vm = null;
+                        IpAddresses addrs = new IpAddresses(this.ipAddress, this.getIp6Address());
+                        if (zone.getNetworkType() == NetworkType.Basic) {
+                            if (this.getNetworkIds() != null) {
+                                throw new InvalidParameterValueException("Can't specify network Ids in Basic zone");
+                            }
+
+                            vm = this._userVmService.createBasicSecurityGroupVirtualMachine(zone, serviceOffering, template, this.getSecurityGroupIdList(), owner, this.name, this.displayName, this.diskOfferingId, this.size, this.group, this.getHypervisor(), this.getHttpMethod(), this.userData, this.sshKeyPairName, this.getIpToNetworkMap(), addrs, this.displayVm, this.keyboard, this.getAffinityGroupIdList(), this.getDetails(), this.getCustomId());
+                        } else if (zone.isSecurityGroupEnabled()) {
+                            vm = this._userVmService.createAdvancedSecurityGroupVirtualMachine(zone, serviceOffering, template, this.getNetworkIds(), this.getSecurityGroupIdList(), owner, this.name, this.displayName, this.diskOfferingId, this.size, this.group, this.getHypervisor(), this.getHttpMethod(), this.userData, this.sshKeyPairName, this.getIpToNetworkMap(), addrs, this.displayVm, this.keyboard, this.getAffinityGroupIdList(), this.getDetails(), this.getCustomId());
+                        } else {
+                            if (this.getSecurityGroupIdList() != null && !this.getSecurityGroupIdList().isEmpty()) {
+                                throw new InvalidParameterValueException("Can't create vm with security groups; security group feature is not enabled per zone");
+                            }
+
+                            vm = this._userVmService.createAdvancedVirtualMachine(zone, serviceOffering, template, this.getNetworkIds(), owner, this.name, this.displayName, this.diskOfferingId, this.size, this.group, this.getHypervisor(), this.getHttpMethod(), this.userData, this.sshKeyPairName, this.getIpToNetworkMap(), addrs, this.displayVm, this.keyboard, this.getAffinityGroupIdList(), this.getDetails(), this.getCustomId());
+                        }
+
+                        if (vm != null) {
+                            this.setEntityId(vm.getId());
+                            this.setEntityUuid(vm.getUuid());
+                        } else {
+                            throw new ServerApiException(ApiErrorCode.INTERNAL_ERROR, "Failed to deploy vm");
+                        }
+                    }
+                }
+            }
+        } catch (InsufficientCapacityException var8) {
+            s_logger.info(var8);
+            s_logger.trace(var8.getMessage(), var8);
+            throw new ServerApiException(ApiErrorCode.INSUFFICIENT_CAPACITY_ERROR, var8.getMessage());
+        } catch (ResourceUnavailableException var9) {
+            s_logger.warn("Exception: ", var9);
+            throw new ServerApiException(ApiErrorCode.RESOURCE_UNAVAILABLE_ERROR, var9.getMessage());
+        } catch (ConcurrentOperationException var10) {
+            s_logger.warn("Exception: ", var10);
+            throw new ServerApiException(ApiErrorCode.INTERNAL_ERROR, var10.getMessage());
+        } catch (ResourceAllocationException var11) {
+            s_logger.warn("Exception: ", var11);
+            throw new ServerApiException(ApiErrorCode.RESOURCE_ALLOCATION_ERROR, var11.getMessage());
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////
 
 }

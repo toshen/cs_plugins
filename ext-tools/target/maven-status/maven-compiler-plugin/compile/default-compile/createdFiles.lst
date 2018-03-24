@@ -1,4 +1,5 @@
 org/apache/cloudstack/exttools/ApiExtToolsServiceImpl.class
+org/apache/cloudstack/exttools/UserVmServiceModified.class
 org/apache/cloudstack/api/command/DeployHiddenVMCmd.class
 org/apache/cloudstack/api/command/GetHiddenVmConfigCmd.class
 org/apache/cloudstack/exttools/ApiExtToolsService.class

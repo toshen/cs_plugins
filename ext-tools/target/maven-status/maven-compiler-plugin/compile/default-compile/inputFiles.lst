@@ -1,5 +1,6 @@
 /home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/api/command/DeployHiddenVMCmd.java
 /home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/exttools/ApiExtToolsService.java
+/home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/exttools/UserVmServiceModified.java
 /home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/exttools/ApiExtToolsServiceImpl.java
 /home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/api/command/GetHiddenVmConfigCmd.java
 /home/yuri/Downloads/cloudstack/plugins/api/ext-tools/src/org/apache/cloudstack/api/response/GetHiddenVmConfigResponse.java

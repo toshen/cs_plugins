@@ -14,6 +14,11 @@
       <artifactId>cloud-plugin-storage-volume-solidfire</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.cloudstack</groupId>
+      <artifactId>cloud-plugin-api-ext-tools</artifactId>
+      <version>4.8.0.1</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

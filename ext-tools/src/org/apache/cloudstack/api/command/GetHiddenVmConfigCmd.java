@@ -1,6 +1,5 @@
 package org.apache.cloudstack.api.command;
 
-import com.cloud.user.AccountService;
 import org.apache.cloudstack.api.ApiConstants;
 import org.apache.cloudstack.api.Parameter;
 import org.apache.cloudstack.api.response.GetHiddenVmConfigResponse;
@@ -25,13 +24,10 @@ public class GetHiddenVmConfigCmd extends BaseCmd {
             required = true)
     private String accountUuid;
 
-    public static final Logger s_logger = Logger.getLogger(GetHiddenVmConfigCmd.class.getName());
-    private static final String s_name = "gethiddenvmconfigresponse";
-
     @Inject
     private ApiExtToolsService _apiExtToolsService;
-    @Inject
-    private AccountService _aAccountService;
+    public static final Logger s_logger = Logger.getLogger(GetHiddenVmConfigCmd.class.getName());
+    private static final String s_name = "gethiddenvmconfigresponse";
 
     @Override
     public void execute() {

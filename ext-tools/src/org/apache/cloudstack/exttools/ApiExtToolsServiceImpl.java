@@ -1,12 +1,7 @@
 package org.apache.cloudstack.exttools;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
-import javax.inject.Inject;
-import javax.naming.ConfigurationException;
 
+import com.cloud.exception.PermissionDeniedException;
 import com.cloud.network.dao.NetworkDao;
 import com.cloud.network.dao.NetworkVO;
 import com.cloud.service.ServiceOfferingVO;
@@ -14,16 +9,22 @@ import com.cloud.service.dao.ServiceOfferingDao;
 import com.cloud.storage.VMTemplateVO;
 import com.cloud.storage.dao.VMTemplateDao;
 import com.cloud.user.Account;
+import com.cloud.user.User;
 import com.cloud.user.dao.AccountDao;
+import com.cloud.utils.component.AdapterBase;
 import org.apache.cloudstack.acl.APIChecker;
 import org.apache.cloudstack.api.command.DeployHiddenVMCmd;
 import org.apache.cloudstack.api.command.GetHiddenVmConfigCmd;
 import org.apache.cloudstack.api.response.GetHiddenVmConfigResponse;
 import org.apache.cloudstack.framework.config.ConfigKey;
 import org.springframework.stereotype.Component;
-import com.cloud.exception.PermissionDeniedException;
-import com.cloud.user.User;
-import com.cloud.utils.component.AdapterBase;
+
+import javax.inject.Inject;
+import javax.naming.ConfigurationException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ApiExtToolsServiceImpl extends AdapterBase implements APIChecker, ApiExtToolsService {
@@ -113,4 +114,27 @@ public class ApiExtToolsServiceImpl extends AdapterBase implements APIChecker, A
 
         return cmdList;
     }
+
+//    private void SetGlobalSettingsValues() {
+//        ConfigKey<?>[] configKeys = _apiExtToolsService.getConfigKeys();
+//        String configKeyZoneUuid = (String)configKeys[0].value();
+//
+//        //TODO: replace zone to template
+//        DataCenter zone = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid);
+//        s_logger.debug("!!! zoneId=" + this.zoneId + ", config zoneId=" + zone.getId() + ", config zoneUuid=" + configKeyZoneUuid);
+//
+////        s_logger.debug("!!!!! zoneId = " + this.zoneId);
+////        if (this.zoneId == null) {
+////            DataCenter zone = _entityMgr.findByUuid(DataCenter.class, configKeyZoneUuid);
+////            if (zone == null) {
+////                s_logger.debug("!!!!! Unable to find zone by UUID(config)=" + configKeyZoneUuid);
+////                throw new InvalidParameterValueException("Unable to find zone by UUID=" + configKeyZoneUuid);
+////            }
+////            this.zoneId = zone.getId();
+////            s_logger.debug("!!!!! config zoneId = " + zone.getId());
+////            s_logger.debug("!!!!! config zoneUuid = " + zone.getUuid());
+////        }
+//    }
+
+
 }
