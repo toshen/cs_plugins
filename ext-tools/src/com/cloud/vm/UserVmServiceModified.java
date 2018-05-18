@@ -1,5 +1,4 @@
-package org.apache.cloudstack.exttools;
-
+package com.cloud.vm;
 
 import com.cloud.exception.ConcurrentOperationException;
 import com.cloud.exception.InsufficientCapacityException;
@@ -10,36 +9,28 @@ import com.cloud.storage.VolumeVO;
 import com.cloud.uservm.UserVm;
 import com.cloud.utils.Pair;
 import com.cloud.utils.fsm.NoTransitionException;
-import com.cloud.vm.UserVmManager;
-import com.cloud.vm.UserVmManagerImpl;
-import com.cloud.vm.UserVmService;
-import com.cloud.vm.UserVmVO;
-import com.cloud.vm.VirtualMachine;
-import com.cloud.vm.VirtualMachineGuru;
-import com.cloud.vm.VirtualMachineManager;
-import com.cloud.vm.VirtualMachineProfile;
 import com.cloud.vm.dao.UserVmDao;
-import com.cloud.vm.dao.UserVmDaoImpl;
 import org.apache.cloudstack.alert.AlertService;
 import org.apache.cloudstack.api.command.DeployHiddenVMCmd;
-import org.apache.cloudstack.engine.orchestration.service.VolumeOrchestrationService;
-import org.apache.cloudstack.framework.config.Configurable;
 import org.apache.log4j.Logger;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class UserVmServiceModified extends UserVmManagerImpl implements UserVmManager, VirtualMachineGuru, UserVmService, Configurable {
-    private static final Logger s_logger = Logger.getLogger(UserVmServiceModified.class);
-    @Inject
-    VolumeOrchestrationService volumeMgr;
-    protected UserVmDao _vmDao = new UserVmDaoImpl();
-    @Inject
-    protected VirtualMachineManager _itMgr;
-    //protected static VirtualMachineManager itMgr;// = new UserVmManager();
+public class UserVmServiceModified extends UserVmManagerImpl {
 
+    @Inject
+    protected UserVmDao _vmDao;
+    private static final Logger s_logger = Logger.getLogger(UserVmServiceModified.class);
+
+    public UserVmServiceModified() {
+        super();
+    }
+
+    @PostConstruct
     public UserVm startVirtualMachine(DeployHiddenVMCmd cmd) throws ResourceUnavailableException, InsufficientCapacityException, ConcurrentOperationException {
         return this.startVirtualMachine(cmd, (Map)null, cmd.getDeploymentPlanner());
     }
@@ -71,15 +62,12 @@ public class UserVmServiceModified extends UserVmManagerImpl implements UserVmMa
         return vm;
     }
 
-
     private void updateVmStateForFailedVmCreation(Long vmId, Long hostId) {
         UserVmVO vm = (UserVmVO)this._vmDao.findById(vmId);
         if (vm != null && vm.getState().equals(VirtualMachine.State.Stopped)) {
             s_logger.debug("Destroying vm " + vm + " as it failed to create on Host with Id:" + hostId);
 
             try {
-                s_logger.debug("!!! this.itMgr==null   " + (this._itMgr==null));
-                s_logger.debug("!!! vm==null   " + (vm==null));
                 this._itMgr.stateTransitTo(vm, VirtualMachine.Event.OperationFailedToError, (Long)null);
             } catch (NoTransitionException var7) {
                 s_logger.warn(var7.getMessage());

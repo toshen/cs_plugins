@@ -1,3 +1,4 @@
+//deployHiddenVm serviceofferingid=41f66fbd-b6ac-4891-87e2-42520de19403 templateid=b84fc79c-1bf6-11e8-af2f-0242ac100a0a
 package org.apache.cloudstack.api.command;
 
 import com.cloud.alert.AlertManager;
@@ -22,6 +23,7 @@ import com.cloud.user.Account;
 import com.cloud.user.ResourceLimitService;
 import com.cloud.uservm.UserVm;
 import com.cloud.utils.net.NetUtils;
+import com.cloud.vm.UserVmServiceModified;
 import com.cloud.vm.VirtualMachine;
 import com.cloud.vm.VirtualMachineManager;
 import com.cloud.vm.dao.UserVmDao;
@@ -48,7 +50,6 @@ import org.apache.cloudstack.api.response.ZoneResponse;
 import org.apache.cloudstack.context.CallContext;
 import org.apache.cloudstack.engine.orchestration.service.VolumeOrchestrationService;
 import org.apache.cloudstack.exttools.ApiExtToolsServiceImpl;
-import org.apache.cloudstack.exttools.UserVmServiceModified;
 import org.apache.cloudstack.framework.config.ConfigKey;
 import org.apache.log4j.Logger;
 
@@ -91,7 +92,6 @@ public class DeployHiddenVMCmd extends BaseAsyncCreateCustomIdCmd {
     protected ServiceOfferingDao _serviceOfferingDao;
     @Inject
     protected ResourceLimitService _resourceLimitMgr;
-    //@Inject
     protected UserVmServiceModified _userVmServiceModified = new UserVmServiceModified();
     public static final Logger s_logger = Logger.getLogger(DeployHiddenVMCmd.class.getName());
     private static final String s_name = "deployvirtualmachineresponse";
